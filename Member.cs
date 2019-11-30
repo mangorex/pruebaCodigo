@@ -76,101 +76,11 @@ namespace pruebaCodigo
         }
         // <-- ENDING ATTRIBUTES. GETTERS AND SETTERS
 
+
         // --> STARTING AUXILIAR METHODS
-        public bool changeBossInSubordinates(String boss, List<String> nameSubordinates)
+
+        public String oldSubordinatesToString()
         {
-            List<Member> memberList = StaticLists.getMemberList(); // List of all members
-            List<Member> subordinates = new List<Member>(); // List of members subordinates
-            
-            int n;
-            bool findMember;
-
-            foreach(Member m in memberList){
-                n=0;
-                findMember=false;
-                
-                while (n<nameSubordinates.Count && findMember == false){
-                    if (nameSubordinates[n] == m.getName()){
-                        // Console.WriteLine("M GET NAME {0} ",m.getName());
-                        findMember = true;
-                        subordinates.Add(m);
-                    }
-                    n++;
-                }
-            }
-            
-            if (subordinates.Count != 0)
-            {
-                int seniority= 0;
-                Member finalBoss = new Member();
-                // Console.WriteLine("\n {0}  is boss ", this.Name);
-
-                // Loop for set boss of prisoner as boss of their subordinates
-                // If boss of prisoner is null obtain the new final boss in base of seniority
-                foreach (Member m in subordinates)
-                {
-                    // Console.WriteLine("{0}", m.toString());
-                    if (boss != null && boss != ""){
-                        m.Boss = boss; // Set boss of the subordinates of prisoner
-                        Member mBoss = memberList.Find(x => x.getName() == boss);
-                        mBoss.addSubordinate(m.getName()); // Set subordinates of the boss of prisoner
-                    } else {
-                        if ( m.getSeniority() >= seniority){
-                            seniority = m.getSeniority();
-                            finalBoss = m;
-                        } else{
-                            m.Boss = "";
-                        }
-                    }
-                    // Console.WriteLine("{0}", m.toString());
-                }
-                
-                // Clean boss of the final boss
-                finalBoss.setBoss("");
-
-                // Loop for add as boss the finalBoss of the subordinates
-                // Addition of subordinates in finalBoss
-                foreach (Member m in subordinates)
-                {
-                    if ( !m.Equals(finalBoss) && (boss == null || boss == "")){
-                        m.setBoss(finalBoss.getName());
-                        finalBoss.addSubordinate(m.getName());
-                    }
-                }
-                
-            }
-            
-            return true;
-        }
-
-        public bool dropSubordinatesInBoss()
-        {
-            List<Member> memberList = StaticLists.getMemberList();
-            //Member subordinate = memberList.Find(x => x.getBoss() == this.Name);
-            List<Member> bosses = memberList.FindAll(
-            delegate (Member member)
-            {
-                return member.getSubordinates().Contains(this.Name);
-            }
-            );
-
-            // Console.WriteLine("BOSS COUNT {0}, name prisoner {1}", bosses.Count, this.Name);
-
-            if (bosses.Count != 0)
-            {
-                // Console.WriteLine("\n {0}  is boss ", this.Name);
-                foreach (Member m in bosses)
-                {
-                    // Copy of old subordinates
-                    // m.OldSubordinates = Subordinates;
-                    // Console.WriteLine("\nOLD BOSS {0}", m.toString());
-                    m.Subordinates.Remove(this.Name);
-                    // Console.WriteLine("{0}\n", m.toString());
-                }
-            }
-            return true;
-        }
-        public String oldSubordinatesToString(){
             String result = "Old subordinates: \n";
             if (OldSubordinates.Count > 0)
             {
@@ -213,6 +123,117 @@ namespace pruebaCodigo
                 result += "    " + "NOBODY";
             }
             return result;
+        }
+
+        /* CREATION DATE: 30/11/2019
+        * AUTHOR: Manuel Antonio Gomez Angulo
+        * Function for change the boss information of subordinates
+        * It receives the following:
+        *   boss (String): The boss name
+        *   nameSubordinates (List<String>): List of subordinates to check and to change the boss
+        */
+        public bool changeBossInSubordinates(String boss, List<String> nameSubordinates)
+        {
+            List<Member> memberList = StaticLists.getMemberList(); // List of all members
+            List<Member> subordinates = new List<Member>(); // List of members subordinates
+
+            int n;
+            bool findMember;
+
+            // Loop of each member of memberList. It is to obtain subordinates with nameSubordinates, but as List<Member> type
+            foreach (Member m in memberList)
+            {
+                n = 0;
+                findMember = false; // Flag to find the subordinate by name
+
+                while (n < nameSubordinates.Count && findMember == false)
+                {
+                    if (nameSubordinates[n] == m.getName())
+                    {
+                        findMember = true;
+                        subordinates.Add(m); // Add member in List<Member> subordinates
+                    }
+                    n++; // Increments contator
+                }
+            }
+
+            if (subordinates.Count != 0)
+            {
+                int seniority = 0;
+                Member seniorMember = new Member();
+
+                // Loop for set boss of prisoner as boss of their subordinates
+                // If boss of prisoner is null obtain the new senior Member in base of seniority
+                foreach (Member m in subordinates)
+                {
+                    // If boss is passed with not null value
+                    if (boss != null && boss != "")
+                    {
+                        m.Boss = boss; // Set boss of the subordinates of prisoner
+                        Member mBoss = memberList.Find(x => x.getName() == boss);
+                        mBoss.addSubordinate(m.getName()); // Set subordinates of the boss of prisoner
+                    }
+                    else
+                    {
+                        // If not exists boss, set as senior boss the member with more seniority
+                        if (m.getSeniority() >= seniority)
+                        {
+                            seniority = m.getSeniority();
+                            seniorMember = m;
+                        }
+                        else
+                        {
+                            m.Boss = "";
+                        }
+                    }
+                }
+
+                // Clean boss of the senior Member
+                seniorMember.setBoss("");
+
+                // Loop for add as boss the seniorMember of the subordinates
+                // Addition of subordinates in seniorMember
+                foreach (Member m in subordinates)
+                {
+                    if (!m.Equals(seniorMember) && (boss == null || boss == ""))
+                    {
+                        m.setBoss(seniorMember.getName());
+                        seniorMember.addSubordinate(m.getName());
+                    }
+                }
+
+            }
+
+            return true;
+        }
+
+        /* CREATION DATE: 30/11/2019
+        * AUTHOR: Manuel Antonio Gomez Angulo
+        * Function to drop subordinates in boss
+        * It receives nothing
+        */
+        public bool dropSubordinatesInBoss()
+        {
+            // Get all member list
+            List<Member> memberList = StaticLists.getMemberList();
+
+            // Get all bosses with List subordinates, with contains the name of this Member 
+            List<Member> bosses = memberList.FindAll(
+            delegate (Member member)
+            {
+                return member.getSubordinates().Contains(this.Name);
+            }
+            );
+
+            // If exists, remove of the subordinates list this member
+            if (bosses.Count != 0)
+            {
+                foreach (Member m in bosses)
+                {
+                    m.Subordinates.Remove(this.Name);
+                }
+            }
+            return true;
         }
 
         // --> ENDING AUXILIAR METHODS
