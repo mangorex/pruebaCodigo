@@ -9,13 +9,12 @@ namespace pruebaCodigo
     // --> STARTING CLASS PROGRAM
     class Program
     {
-        static List<Member> readFromFile(string path){
+        //static List<Member> readFromFile(string path){
+        static void readFromFile(string path){
             string json = System.IO.File.ReadAllText(path);
 
             // Display the file contents to the console. Variable text is a string.
             //System.Console.WriteLine("Contents of WriteText.txt = {0}", json);
-
-            List<Member> memberList = new List<Member>();
 
             JsonTextReader reader = new JsonTextReader(new StringReader(json));
             int i = 0;
@@ -32,6 +31,7 @@ namespace pruebaCodigo
                         switch (reader.Value)
                         {
                             case "name":
+                                m = new Member();
                                 i = 0;
                                 break;
                             case "seniority":
@@ -63,7 +63,8 @@ namespace pruebaCodigo
                                 m.setBoss(reader.Value.ToString());
                                 // Console.WriteLine("");
                                 // Console.WriteLine($"* Print member {m.toString()}");
-                                memberList.Add(m);
+                                //memberList.Add(m);
+                                StaticLists.addMemberList(m);
                                 break;
                         }
                     }
@@ -76,7 +77,6 @@ namespace pruebaCodigo
                 }*/
             }
 
-            return memberList;
         }
 
         /*
@@ -106,20 +106,35 @@ namespace pruebaCodigo
             */
            
             // Please, if you want test, modify yourself the path
-            List<Member> memberList = readFromFile(@"D:\pruebaCodigo\datos-json");
+            
+            readFromFile(@"D:\pruebaCodigo\datos-json");
+            List<Member> memberList = StaticLists.getMemberList();
+            var c1 = new Carcel();
 
-            Console.Write("Do you want to see first member list? [y/n] ");
+            Console.Write("Do you want to see first member list and current prisoners? [y/n] ");
             ConsoleKey  response = Console.ReadKey(false).Key;   // if you pulse y show json member list
+            Console.WriteLine("\n");
             if (response == ConsoleKey.Y)
             {
-                for (int i1 = 0; i1 < memberList.Count; i1++)
+                Console.WriteLine("Printing initial state");
+                for (int j = 0; j < memberList.Count; j++)
                 {
-                    Console.WriteLine(memberList[i1].toString());
+                    Console.WriteLine(memberList[j].toString());
                 }
+
+                Console.WriteLine("\n{0}", c1.toString());
+                Console.WriteLine("Thanks you to check my work. It will continue");
             }
             
-            var c1 = new Carcel();
-            
+            Console.WriteLine("\nTEST");
+            Member mPrisoner = memberList.Find(x => x.getName() == "Jhon");
+            Console.WriteLine("{0}", mPrisoner.toString() );
+            c1.enter(mPrisoner);
+            Console.WriteLine("\n{0}", c1.toString());
+            mPrisoner = memberList.Find(x => x.getName() == "Andy");
+            c1.enter(mPrisoner);
+            Console.WriteLine("\n{0}", c1.toString());
+
         }
         //--> ENDING MAIN
 

@@ -16,14 +16,17 @@ namespace pruebaCodigo
 
         public String toString()
         {
-            var result = "";
+            var result = "PRISONERS";
 
             if (Prisoners.Count > 0)
             {
+                result += "\n";
                 foreach (Member m in Prisoners)
                 {
-                   result += "\n    " +  m.getName();
+                   result += "    " +  m.getName();
                 }
+            }else {
+                result += ": NOBODY";
             }
             return result;
         }
