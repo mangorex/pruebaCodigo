@@ -58,7 +58,9 @@ Name: Pascual, seniority: 3, boss: Jhon, subordinates:
 Name: Andy, seniority: 5, boss: NOBODY, subordinates:   
     Jhon
     Carl
+    
 Y después:
+
 Name: Francis, seniority: 1, boss: Andy, subordinates:
     NOBODY
 Name: Pascual, seniority: 3, boss: Andy, subordinates:
