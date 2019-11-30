@@ -6,12 +6,9 @@ Este proyecto es una prueba para una selección de una empresa con estilo, que s
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
-
-
 ### Pre-requisitos 📋
 
-Se necesita tener instalado .Net Core 3 y Visual Studio Code
+Se necesita tener instalado .Net Core 3, git y Visual Studio Code... Puede que se pueda desplegar y probar de otra manera, pero solo digo lo que yo usé :)
 
 ## Construido con 🛠️
 
