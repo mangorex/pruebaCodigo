@@ -91,7 +91,7 @@ he hecho es echarle ojo, corazón y ganas, para realizar el mejor trabajo posibl
 ## Expresiones de Gratitud 🎁
 
 * Agradezco David por hacerme partícipe de esta prueba 📢
-* Doy las gracias a Jennie por pasarme la prueba 🤓.
+* Doy las gracias a Jennie por pasarme el enunciado de la prueba 🤓.
 * Invito a una cerveza 🍺 o un café ☕ a las personas que me han hecho partícipe. 
 
 ---
