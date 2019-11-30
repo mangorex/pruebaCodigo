@@ -1,6 +1,6 @@
 # Proyecto: pruebaCodigo
 
-Este proyecto es una prueba para una selección de una empresa con estilo, que se preocupa por ver el nivel de programación, lo cual agradezco
+Este proyecto es una prueba de código para que se pueda observar o intuir mi nivel, claridad de código, de pensamiento, y lo más importante, de ganas de comerse el donut
 
 ## Comenzando 🚀
 
@@ -95,8 +95,8 @@ he hecho es echarle ojo, corazón y ganas, para realizar el mejor trabajo posibl
 ## Expresiones de Gratitud 🎁
 
 * Agradezco David por hacerme partícipe de esta prueba 📢
-* Doy las gracias a Jennie por pasarme el enunciado de la prueba 🤓.
-* Invito a una cerveza 🍺 o un café ☕ a las personas que me han hecho partícipe. 
+* Doy las gracias a Jennie por pasarme el enunciado de la prueba 🤓
+* Invito a una cerveza 🍺 o un café ☕ a las personas que me han hecho partícipe
 
 ---
 ⌨️ con ❤️ por [mangorex](https://github.com/mangorex) 😊
