@@ -84,7 +84,7 @@ namespace pruebaCodigo
         */
         static void Main(string[] args)
         {   
-            Console.Write("STARTING DREAM. Thanks you for give me motivation to improve my self");
+            Console.Write("STARTING DREAM. Thanks you for give me motivation to improve my self\n");
 
             // Please, if you want test, modify yourself the path
             readFromFile(@"D:\pruebaCodigo\datos-json");
@@ -102,17 +102,25 @@ namespace pruebaCodigo
                 Console.WriteLine("Thanks you to check my work. It will continue");
                 Console.WriteLine("ENDING INITIAL STATE");
             }
+
+            Console.WriteLine("\nSTARTING CHANGES IN THE DREAM\n");
+            Console.WriteLine("Press any key to make Jhon a prisoner"); 
+            Console.ReadKey(false); 
             
-            Console.WriteLine("\nSTARTING CHANGES IN THE DREAM");
             Member mPrisoner = memberList.Find(x => x.getName() == "Jhon");
             // Console.WriteLine("{0}", mPrisoner.toString() );
             c1.enter(mPrisoner);
-
             StaticLists.memberListToString();
             
+            Console.WriteLine("Click to make Jhon a free man"); 
+            Console.ReadKey(false);
+
             c1.leave(mPrisoner);
             StaticLists.memberListToString();
 
+            Console.WriteLine("Click to see senior band"); 
+            Console.ReadKey(false);
+            StaticLists.printSeniorBand();
             //StaticLists.prisonerListToString();
         }
         //--> ENDING MAIN

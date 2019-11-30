@@ -33,6 +33,8 @@ namespace pruebaCodigo
 
         public static void memberListToString()
         {
+            Console.WriteLine("\n PRINTING LIST OF MEMBERS");
+
             for (int i = 0; i < MemberList.Count; i++)
             {
                 Console.WriteLine(MemberList[i].toString());
@@ -69,6 +71,12 @@ namespace pruebaCodigo
             }
         }
 
+        // My interpretation is that the senior band is the member who has not a Boss
+        public static void printSeniorBand(){
+            Member senior = MemberList.Find(x => x.getBoss() == "");
+            Console.WriteLine("\nSENIOR BAND IS:");
+            Console.WriteLine("{0}", senior.toString());
+        }
 
     }
 }

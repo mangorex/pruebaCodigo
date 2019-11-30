@@ -39,6 +39,12 @@ namespace pruebaCodigo
         {
             this.Subordinates.Add(subordinate);
         }
+
+        public void removeSubordinate(String subordinate)
+        {
+            this.Subordinates.Remove(subordinate);
+        }
+
         private String Boss;
         public String getBoss()
         {
@@ -71,18 +77,28 @@ namespace pruebaCodigo
         // <-- ENDING ATTRIBUTES. GETTERS AND SETTERS
 
         // --> STARTING AUXILIAR METHODS
-        public bool changeBossInSubordinates(String boss)
+        public bool changeBossInSubordinates(String boss, List<String> nameSubordinates)
         {
-            List<Member> memberList = StaticLists.getMemberList();
-            //Member subordinate = memberList.Find(x => x.getBoss() == this.Name);
-            List<Member> subordinates = memberList.FindAll(
-            delegate (Member member)
-            {
-                return member.getBoss() == this.Name;
-            }
-            );
+            List<Member> memberList = StaticLists.getMemberList(); // List of all members
+            List<Member> subordinates = new List<Member>(); // List of members subordinates
             
+            int n;
+            bool findMember;
 
+            foreach(Member m in memberList){
+                n=0;
+                findMember=false;
+                
+                while (n<nameSubordinates.Count && findMember == false){
+                    if (nameSubordinates[n] == m.getName()){
+                        // Console.WriteLine("M GET NAME {0} ",m.getName());
+                        findMember = true;
+                        subordinates.Add(m);
+                    }
+                    n++;
+                }
+            }
+            
             if (subordinates.Count != 0)
             {
                 int seniority= 0;
@@ -123,6 +139,7 @@ namespace pruebaCodigo
                 }
                 
             }
+            
             return true;
         }
 
