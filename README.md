@@ -83,6 +83,7 @@ he hecho es echarle ojo, corazón y ganas, para realizar el mejor trabajo posibl
 ```
 
 ### Sugerencias de mejora
+* Realizar de una manera más automática el deserializado del JSON, de forma que no haga falta la función readFromFile, que se encarga de leer el JSON, de procesarlo y de establecer los miembros y el listado de miembros. He tenido que desarrollar dicha función yo, porque no he averiguado como se hace la deserialización automática total, sin que se vulnere la protección de los atributos de las clases
 * Mejorar todavía más la simplicidad del código. Creo que está bastante bien, pero siempre se puede mejorar, ¿no?... Al menos si hay tiempo jeje
 * Realizar el organigrama visualmente, tal vez con OrgChart, un plugin accesible para .Net
 * Limpiar quizás lo del listado de prisioneros, que tal vez no haga falta. Aún así, he de decir que me quedé sin tiempo y no es nada muy "guarro" (perdón por la expresión)
