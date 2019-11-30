@@ -74,7 +74,8 @@ Name: Andy, seniority: 5, boss: NOBODY, subordinates:
 _Las pruebas de estilo de codificación, serviría para ver si el estilo de código es limpio y si sigue cierto estándar_
 
 ```
-Por desgracia no he encontrado ninguna prueba automática. Me quedé sin tiempo, así que la prueba que he hecho es echarle ojo, corazón y ganas, para realizar el mejor trabajo posible.
+Por desgracia no he encontrado ninguna prueba automática. Me quedé sin tiempo, así que la prueba que
+he hecho es echarle ojo, corazón y ganas, para realizar el mejor trabajo posible.
 ```
 
 ### Sugerencias de mejora
