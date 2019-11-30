@@ -25,7 +25,7 @@ _Estas son las herramientas que decidí usar_
 * _Instalar Git_
 * _Instalar Newtonsoft.Json desde NuGet_
 
-_dotnet add package Newtonsoft.Json
+_dotnet add package Newtonsoft.Json_
 
 _git clone https://github.com/mangorex/pruebaCodigo.git_
 
