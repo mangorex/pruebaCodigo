@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\mangorex\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\mangorex\\.nuget\\packages"
+    ]
+  }
+}

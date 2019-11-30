@@ -1,0 +1,13 @@
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\pruebaCodigo.exe
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\pruebaCodigo.deps.json
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\pruebaCodigo.runtimeconfig.json
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\pruebaCodigo.runtimeconfig.dev.json
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\pruebaCodigo.dll
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\pruebaCodigo.pdb
+D:\pruebaCodigo\obj\Debug\netcoreapp3.0\pruebaCodigo.csprojAssemblyReference.cache
+D:\pruebaCodigo\obj\Debug\netcoreapp3.0\pruebaCodigo.AssemblyInfoInputs.cache
+D:\pruebaCodigo\obj\Debug\netcoreapp3.0\pruebaCodigo.AssemblyInfo.cs
+D:\pruebaCodigo\obj\Debug\netcoreapp3.0\pruebaCodigo.dll
+D:\pruebaCodigo\obj\Debug\netcoreapp3.0\pruebaCodigo.pdb
+D:\pruebaCodigo\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+D:\pruebaCodigo\obj\Debug\netcoreapp3.0\pruebaCodigo.csproj.CopyComplete
