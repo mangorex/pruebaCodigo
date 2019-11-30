@@ -24,21 +24,26 @@ namespace pruebaCodigo
         {
             this.Seniority = seniority;
         }
-        private List<Member> Subordinates = new List<Member>();
-        private List<Member> getSubordinates()
+        private List<String> Subordinates = new List<String>();
+        private List<String> getSubordinates()
         {
             return this.Subordinates;
         }
-        public void setSubordinates(List<Member> subordinates)
+        public void setSubordinates(List<String> subordinates)
         {
             this.Subordinates = subordinates;
         }
-        private Member Boss;
-        public Member getBoss()
+
+        public void addSubordinate(String subordinate)
+        {
+            this.Subordinates.Add(subordinate);
+        }
+        private String Boss;
+        public String getBoss()
         {
             return this.Boss;
         }
-        public void setBoss(Member boss)
+        public void setBoss(String boss)
         {
             this.Boss = boss;
         }
@@ -47,28 +52,26 @@ namespace pruebaCodigo
         {
             var result = "Name: " + this.Name + ", seniority: " + this.Seniority;
 
-            if (Boss != null)
+            result += ", boss: ";
+            if (Boss != null && Boss != "")
             {
-                result += ", boss: " + this.Boss;
+                result += this.Boss;
+            } else {
+                result += "NOBODY";
             }
 
+            result += ", subordinates: \n";
             if (Subordinates.Count > 0)
             {
-                result += ", subordinates: \n";
-                foreach (Member m in Subordinates)
+                
+                foreach (String m in Subordinates)
                 {
-                    result += "    " + m.Name + "\n";
+                    result += "    " + m + "\n";
                 }
+            } else {
+                result +=  "    " + "NOBODY";
             }
             return result;
         }
-
-        /*public Member(String name, int seniority, List<Member> subordinates, Member boss)
-        {
-            this.Name = name;
-            this.Seniority = seniority;
-            this.Subordinates = subordinates;
-            this.Boss = boss;
-        }*/
     }
 }
