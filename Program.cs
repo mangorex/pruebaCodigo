@@ -91,6 +91,7 @@ namespace pruebaCodigo
             List<Member> memberList = StaticLists.getMemberList();
             var c1 = new Carcel();
 
+            /*
             Console.Write("\nDo you want to see first member list and current prisoners? [y/n] ");
             ConsoleKey  response = Console.ReadKey(false).Key;   // if you pulse y show json member list
             Console.WriteLine("\n");
@@ -102,7 +103,7 @@ namespace pruebaCodigo
                 Console.WriteLine("Thanks you to check my work. It will continue");
                 Console.WriteLine("ENDING INITIAL STATE");
             }
-
+            */
             Console.WriteLine("\nSTARTING CHANGES IN THE DREAM\n");
             Console.WriteLine("Press any key to make Jhon a prisoner"); 
             Console.ReadKey(false); 
@@ -141,11 +142,11 @@ namespace pruebaCodigo
             StaticLists.setSeniorMember(newSenior);
             StaticLists.memberListToString();
 
-            /*Console.WriteLine("Press any key to make old senior member a free man"); 
+            // Console.WriteLine("Press any key to make old senior member a free man"); 
             Console.ReadKey(false);
             c1.leave(oldSeniorMember);
             StaticLists.memberListToString();
-            */
+            
             //StaticLists.prisonerListToString();
         }
         //--> ENDING MAIN

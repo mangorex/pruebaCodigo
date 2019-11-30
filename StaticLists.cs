@@ -82,6 +82,7 @@ namespace pruebaCodigo
             newSenior.setBoss("");
             oldSenior.setBoss(newSenior.getName());
             newSenior.addSubordinate(oldSenior.getName());
+            oldSenior.removeSubordinate(newSenior.getName());
         }
 
     }

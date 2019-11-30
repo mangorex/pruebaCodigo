@@ -23,15 +23,25 @@ namespace pruebaCodigo
         }
 
         public void leave(Member m){
+            Member seniorMember = StaticLists.getSeniorMember();
+
             StaticLists.addMemberList(m);
             StaticLists.removePrisonerList(m);
             m.changeBossInSubordinates(m.getName(), m.getOldSubordinates());
             m.setBoss(m.getOldBoss());
             Member mBoss = StaticLists.getMemberList().Find(x => x.getName() == m.getBoss());
-            foreach(String strName in m.getOldSubordinates()){
-                mBoss.removeSubordinate(strName);
+            if (mBoss != null){    
+                foreach(String strName in m.getOldSubordinates()){
+                    mBoss.removeSubordinate(strName);
+                }
+                mBoss.addSubordinate(m.getName());
+            } else{
+                StaticLists.setSeniorMember(m);
+                foreach(String nameSubordinate in m.getSubordinates()){
+                    seniorMember.removeSubordinate(nameSubordinate);
+                }
             }
-            mBoss.addSubordinate(m.getName());
+            
             m.setOldSubordinates(new List<String>());
             m.setOldBoss("");
         }
