@@ -45,7 +45,9 @@ _git clone https://github.com/mangorex/pruebaCodigo.git_
 _Estas pruebas tratan de verificar si se ha desarrollado correctamente el programa pedido_
 
 ```
-Entiendo que cumple, al menos a nivel técnico con lo prometido, ya que se puede observar como va cambiando el listado de miembros, cuando se encarcela a un miembro y cuando se libera. Por ejemplo, antes de encarcelar a Jhon (segundo punto), se muestra lo siguiente:
+Entiendo que cumple, al menos a nivel técnico con lo prometido, ya que se puede observar
+como va cambiando el listado de miembros, cuando se encarcela a un miembro y cuando se libera. 
+Por ejemplo, antes de encarcelar a Jhon (segundo punto), se muestra lo siguiente:
 Name: Jhon, seniority: 4, boss: Andy, subordinates:     
     Francis
     Pascual
