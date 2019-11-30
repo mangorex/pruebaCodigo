@@ -20,10 +20,10 @@ _Estas son las herramientas que decidí usar_
 
 ### Instalación 🔧
 
-_Instalar .NET Core 3.0 SDK_
-_Instalar Visual Studio Code_
-_Instalar Git_
-_Instalar Newtonsoft.Json desde NuGet_
+* _Instalar .NET Core 3.0 SDK_
+* _Instalar Visual Studio Code_
+* _Instalar Git_
+* _Instalar Newtonsoft.Json desde NuGet_
 
 _dotnet add package Newtonsoft.Json
 
@@ -31,14 +31,14 @@ _git clone https://github.com/mangorex/pruebaCodigo.git_
 
 ## Ejecutando las pruebas ⚙️
 
-_Ejecutar dotnet run en el directorio pruebaCodigo, que incluye el json (el nombre debe ser datos-json)_
-_Pulsar tecla y si necesita ver el estado inicial en json_
-_Pulsar una tecla para meter en la carcel a Jhon y ver por pantalla el organigrama (por consola)_
-_Pulsar una tecla para liberar a Jhon y ver por pantalla el organigrama (por consola)_
-_Pulsar una tecla para imprimir por pantalla al más alto cargo de la banda (seniorMember)_
-_Pulsar una tecla para encarcelar al más alto cargo de la banda (seniorMember) y ver por pantalla el organigrama (por consola)_
-_Pulsar una tecla para establecer como más alto cargo de la banda (seniorMember) a Francis y ver por pantalla el organigrama (por consola). NOTA: Este punto no sé si había que hacerlo así, pero lo entendí así (PARTE PLUS. PUNTO 2)_
-_Pulsar una tecla para liberar al antiguo más alto cargo de la banda (oldSeniorMember) y ver por pantalla el organigrama (por consola)_
+* _Ejecutar dotnet run en el directorio pruebaCodigo, que incluye el json (el nombre debe ser datos-json)_
+* _Pulsar tecla y si necesita ver el estado inicial en json_
+* _Pulsar una tecla para meter en la carcel a Jhon y ver por pantalla el organigrama (por consola)_
+* _Pulsar una tecla para liberar a Jhon y ver por pantalla el organigrama (por consola)_
+* _Pulsar una tecla para imprimir por pantalla al más alto cargo de la banda (seniorMember)_
+* _Pulsar una tecla para encarcelar al más alto cargo de la banda (seniorMember) y ver por pantalla el organigrama (por consola)_
+* _Pulsar una tecla para establecer como más alto cargo de la banda (seniorMember) a Francis y ver por pantalla el organigrama (por consola). NOTA: Este punto no sé si había que hacerlo así, pero lo entendí así (PARTE PLUS. PUNTO 2)_
+* _Pulsar una tecla para liberar al antiguo más alto cargo de la banda (oldSeniorMember) y ver por pantalla el organigrama (por consola)_
 
 ### Analice las pruebas end-to-end 🔩
 
