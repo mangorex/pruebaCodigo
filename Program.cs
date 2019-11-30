@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json;
 
+// IMPORTANT. For this project to work, you need .NET Core 3.0 SDK and Newtonsoft.Json. It is all in README.md
 namespace pruebaCodigo
 {
     
