@@ -5,23 +5,23 @@ namespace pruebaCodigo
 {
     public class Carcel
     {
-        private List<Member> Prisoners = new List<Member>();
         public void enter(Member m){
-            this.Prisoners.Add(m);
+            StaticLists.addPrisonerList(m);
         }
 
         public void leave(Member m){
-            this.Prisoners.Remove(m);
+            StaticLists.removePrisonerList(m);
         }
 
         public String toString()
         {
+            List<Member> PrisonersList = StaticLists.getPrisonersList();
             var result = "PRISONERS";
 
-            if (Prisoners.Count > 0)
+            if (PrisonersList.Count > 0)
             {
                 result += "\n";
-                foreach (Member m in Prisoners)
+                foreach (Member m in PrisonersList)
                 {
                    result += "    " +  m.getName();
                 }

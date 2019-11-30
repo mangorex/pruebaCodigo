@@ -61,9 +61,6 @@ namespace pruebaCodigo
                                 break;
                             case 3:
                                 m.setBoss(reader.Value.ToString());
-                                // Console.WriteLine("");
-                                // Console.WriteLine($"* Print member {m.toString()}");
-                                //memberList.Add(m);
                                 StaticLists.addMemberList(m);
                                 break;
                         }
@@ -86,25 +83,7 @@ namespace pruebaCodigo
             DESCRITION: This code has to read json and create members instance, carcel instances to resolve the problem
         */
         static void Main(string[] args)
-        {
-
-            /*var m1 = new Member();
-            m1.setName("John");
-            m1.setSeniority(4);
-            Console.WriteLine($"Print member 1. name: {m1.getName()}, seniority: {m1.getSeniority()}");
-
-           
-            m1.setSubordinates(new List<String>() { m2.getName(), m3.getName() });
-            Console.WriteLine($"* Print member 1 {m1.toString()}");
-
-            var c1 = new Carcel();
-            c1.enter(m1);
-            c1.enter(m2);
-            Console.WriteLine($"* Print carcel 1 {c1.toString()}");
-            c1.leave(m1);
-            Console.WriteLine($"* Print carcel 2 {c1.toString()}");
-            */
-           
+        {           
             // Please, if you want test, modify yourself the path
             
             readFromFile(@"D:\pruebaCodigo\datos-json");

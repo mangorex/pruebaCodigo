@@ -16,7 +16,7 @@ namespace pruebaCodigo
             return MemberList;
         }
 
-        public static void setMemberList( List<Member> memberList)
+        public static void setMemberList(List<Member> memberList)
         {
             MemberList = memberList;
         }
@@ -26,6 +26,27 @@ namespace pruebaCodigo
             MemberList.Add(member);
         }
 
+        private static List<Member> PrisonersList = new List<Member>();
+
+        public static List<Member> getPrisonersList()
+        {
+            return PrisonersList;
+        }
+
+        public static void setPrisonersList(List<Member> prisonersList)
+        {
+            PrisonersList = prisonersList;
+        }
+
+        public static void addPrisonerList(Member member)
+        {
+            PrisonersList.Add(member);
+        }
+
+        public static void removePrisonerList(Member member)
+        {
+            PrisonersList.Remove(member);
+        }
     }
 
 }
