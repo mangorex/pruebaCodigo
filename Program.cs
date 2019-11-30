@@ -112,15 +112,40 @@ namespace pruebaCodigo
             c1.enter(mPrisoner);
             StaticLists.memberListToString();
             
-            Console.WriteLine("Click to make Jhon a free man"); 
+            Console.WriteLine("Press any key to make Jhon a free man"); 
             Console.ReadKey(false);
 
             c1.leave(mPrisoner);
             StaticLists.memberListToString();
 
-            Console.WriteLine("Click to see senior band"); 
+            Console.WriteLine("Press any key to see senior band"); 
             Console.ReadKey(false);
-            StaticLists.printSeniorBand();
+            Member oldSeniorMember = StaticLists.getSeniorMember();
+            Console.WriteLine("\nSENIOR BAND IS:");
+            Console.WriteLine("{0}", oldSeniorMember.toString());
+
+            Console.WriteLine("Press any key to make senior member a prisoner"); 
+            Console.ReadKey(false);
+            c1.enter(oldSeniorMember);
+            StaticLists.memberListToString();
+            
+
+            Console.WriteLine("Press any key to see new senior band"); 
+            Console.ReadKey(false);
+            Member seniorMember = StaticLists.getSeniorMember();
+            Console.WriteLine("\nSENIOR BAND IS:");
+            Console.WriteLine("{0}", seniorMember.toString());
+
+            Console.WriteLine("Press any key to set new senior band. It will be Francis"); 
+            Member newSenior = memberList.Find(x => x.getName() == "Francis");
+            StaticLists.setSeniorMember(newSenior);
+            StaticLists.memberListToString();
+
+            /*Console.WriteLine("Press any key to make old senior member a free man"); 
+            Console.ReadKey(false);
+            c1.leave(oldSeniorMember);
+            StaticLists.memberListToString();
+            */
             //StaticLists.prisonerListToString();
         }
         //--> ENDING MAIN

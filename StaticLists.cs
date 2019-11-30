@@ -72,10 +72,16 @@ namespace pruebaCodigo
         }
 
         // My interpretation is that the senior band is the member who has not a Boss
-        public static void printSeniorBand(){
+        public static Member getSeniorMember(){
             Member senior = MemberList.Find(x => x.getBoss() == "");
-            Console.WriteLine("\nSENIOR BAND IS:");
-            Console.WriteLine("{0}", senior.toString());
+            return senior;
+        }
+
+        public static void setSeniorMember(Member newSenior){
+            Member oldSenior = getSeniorMember();
+            newSenior.setBoss("");
+            oldSenior.setBoss(newSenior.getName());
+            newSenior.addSubordinate(oldSenior.getName());
         }
 
     }
