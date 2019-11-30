@@ -49,6 +49,7 @@ Entiendo que cumple, al menos a nivel técnico con lo prometido, ya que se puede
 como va cambiando el listado de miembros, cuando se encarcela a un miembro y cuando se libera. 
 
 Por ejemplo, antes de encarcelar a Jhon (segundo punto), se muestra lo siguiente:
+
 Name: Jhon, seniority: 4, boss: Andy, subordinates:     
     Francis
     Pascual
