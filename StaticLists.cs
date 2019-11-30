@@ -26,6 +26,19 @@ namespace pruebaCodigo
             MemberList.Add(member);
         }
 
+        public static void removeMemberList(Member member)
+        {
+            MemberList.Remove(member);
+        }
+
+        public static void memberListToString()
+        {
+            for (int i = 0; i < MemberList.Count; i++)
+            {
+                Console.WriteLine(MemberList[i].toString());
+            }
+        }
+
         private static List<Member> PrisonersList = new List<Member>();
 
         public static List<Member> getPrisonersList()
@@ -47,6 +60,15 @@ namespace pruebaCodigo
         {
             PrisonersList.Remove(member);
         }
-    }
 
+        public static void prisonerListToString()
+        {
+            for (int i = 0; i < PrisonersList.Count; i++)
+            {
+                Console.WriteLine(PrisonersList[i].toString());
+            }
+        }
+
+
+    }
 }

@@ -83,37 +83,37 @@ namespace pruebaCodigo
             DESCRITION: This code has to read json and create members instance, carcel instances to resolve the problem
         */
         static void Main(string[] args)
-        {           
+        {   
+            Console.Write("STARTING DREAM. Thanks you for give me motivation to improve my self");
+
             // Please, if you want test, modify yourself the path
-            
             readFromFile(@"D:\pruebaCodigo\datos-json");
             List<Member> memberList = StaticLists.getMemberList();
             var c1 = new Carcel();
 
-            Console.Write("Do you want to see first member list and current prisoners? [y/n] ");
+            Console.Write("\nDo you want to see first member list and current prisoners? [y/n] ");
             ConsoleKey  response = Console.ReadKey(false).Key;   // if you pulse y show json member list
             Console.WriteLine("\n");
             if (response == ConsoleKey.Y)
             {
-                Console.WriteLine("Printing initial state");
-                for (int j = 0; j < memberList.Count; j++)
-                {
-                    Console.WriteLine(memberList[j].toString());
-                }
-
+                Console.WriteLine("STARTING INITIAL STATE");
+                StaticLists.memberListToString();
                 Console.WriteLine("\n{0}", c1.toString());
                 Console.WriteLine("Thanks you to check my work. It will continue");
+                Console.WriteLine("ENDING INITIAL STATE");
             }
             
-            Console.WriteLine("\nTEST");
+            Console.WriteLine("\nSTARTING CHANGES IN THE DREAM");
             Member mPrisoner = memberList.Find(x => x.getName() == "Jhon");
-            Console.WriteLine("{0}", mPrisoner.toString() );
+            // Console.WriteLine("{0}", mPrisoner.toString() );
             c1.enter(mPrisoner);
-            Console.WriteLine("\n{0}", c1.toString());
-            mPrisoner = memberList.Find(x => x.getName() == "Andy");
-            c1.enter(mPrisoner);
-            Console.WriteLine("\n{0}", c1.toString());
 
+            StaticLists.memberListToString();
+            
+            c1.leave(mPrisoner);
+            StaticLists.memberListToString();
+
+            //StaticLists.prisonerListToString();
         }
         //--> ENDING MAIN
 
